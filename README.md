@@ -20,7 +20,7 @@ cd Wifi-QR-Code-Maker
 
 #### Create and activate a virtual environment
 ```shell
-python -m venv env
+python -m venv venv
 ```
 ##### MacOS/Linux
 ```shell
