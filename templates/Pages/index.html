@@ -1,4 +1,4 @@
-{% extends "base.min.html" %}
+{% extends "base.html" %}
 
 {% block title %} Wifi QR Code Generator {% endblock %}
 
@@ -6,32 +6,52 @@
 
 <main>
   <article>
-    <h1 id="heading">Generate a QR Code for your Wifi!!</h1>
+    <h1 style="color:black;" id="heading">Generate a QR Code for your Wifi!!</h1>
     <form action="{{ url_for('result') }}" method="POST">
       <!-- SSID Field -->
-      <div>
-        <span class="input-heading">SSID:</span> <br>
-        <input type="text" name="ssid" class="input" required placeholder="eg. MyWifi, HomeWIfi">
-      </div>
-      <!-- Encryption Field -->
-      <div>
-        <span class="input-heading"><label for="encryption">Encryption:</label></span><br><br>
-        <select name="encryption" id="encryption">
-          <option value="WPA">WPA/WPA2</option>
-          <option value="WEP">WEP</option>
-          <option value="">None</option>
-        </select>
-      </div>
-      <!-- Password Field -->
-      <div id="password">
-        <span class="input-heading">Password:</span> <br>
-        <input type="password" name="password" class="input" required placeholder="eg. MyPassword, 12345"><br>
-      </div>
-      <!-- Hidden Field -->
-      <input type="checkbox" name="hidden" id="hidden">
-      <label for="hidden">Hidden</label><br>
-      <button type="submit" id="submit">Generate</button>
-      </div>
+      <div style='box-shadow:0px 0 30px rgb(195, 195, 195);position:absolute;background-color:rgb(255, 255, 255);width:30%;border-radius:30px;padding:20px;left:35%;'>
+        <div style='text-align:left;font-weight:bold;'>
+          <label style="margin-left:40px;color:black">
+            SSID
+          </label>
+          <input style='width:84%;box-shadow:0px 0 10px rgb(195, 195, 195);'class="input is-rounded" type="text" name='ssid' required placeholder="eg. MyWifi, HomeWIfi">
+        </div>
+
+        <!-- Password Field -->
+        <div class="field" style='text-align:left;font-weight:bold;'>
+          <label style="margin-left:40px;color:black">Password</label>
+          <p class="control has-icons-left">
+            <input style="box-shadow:0px 0 10px rgb(195, 195, 195);" class="input is-rounded" type="password" name="password" placeholder="eg. MyPassword, 12345">
+            <span style="margin-left:30px;margin-top:5px;"class="icon is-small is-left">
+              <i class="fas fa-lock"></i>
+            </span>
+          </p>
+        </div>
+       
+
+        <!-- Encrytion Field -->
+        <div>
+          <div class="select is-rounded">
+            <select name='encryption' id='encrytion' style="box-shadow:0px 0 10px rgb(195, 195, 195);">
+              <option>WPA/WPA2</option>
+              <option>WEP</option>
+            </select>
+          </div>
+        </div>
+        
+        <!-- Hidden Field -->
+        <div style='padding:10px;'>
+          <label style='color:black'class="checkbox">
+            <input style="box-shadow:0px 0 10px rgb(195, 195, 195);" type="checkbox" name="hidden" id="hidden">
+            Hidden
+          </label>
+        </div>
+
+        <div>
+          <button style="box-shadow:0px 0 10px rgb(195, 195, 195);" class="button is-rounded">Generate</button>
+        </div>
+
+    </div>
     </form>
   </article>
 </main>
